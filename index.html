@@ -1,0 +1,364 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Agenda tu consulta de crédito</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one centered column. Silver satin backdrop, burgundy ink, gold and silver metal accents. */
+:root {
+  --ink: #3A0E1B;
+  --muted: #5B4F55;
+  --line: #B9BEC7;
+  --burgundy: #6B1B2E;
+  --burgundy-deep: #3E0E1A;
+  --gold: #D8B65E;
+  --gold-deep: #9C7A2E;
+  --silver: #C4CAD3;
+  --card: rgba(255, 252, 248, 0.82);
+  --display: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
+  --body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+  /* Silver satin: crumpled wrinkles built from soft diagonal gradients. */
+  --satin:
+    linear-gradient(118deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 22%, rgba(255,255,255,0) 34%),
+    linear-gradient(72deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.7) 52%, rgba(255,255,255,0) 60%),
+    linear-gradient(160deg, rgba(128,112,96,0) 0%, rgba(128,112,96,0.14) 30%, rgba(128,112,96,0) 46%),
+    linear-gradient(25deg, rgba(255,255,255,0) 58%, rgba(255,255,255,0.75) 70%, rgba(255,255,255,0) 80%),
+    linear-gradient(104deg, rgba(128,112,96,0) 10%, rgba(128,112,96,0.12) 45%, rgba(128,112,96,0) 62%),
+    linear-gradient(180deg, #FBF9F5 0%, #EAE5DC 50%, #F7F4EF 100%);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #F4EEF0;
+    --muted: #C9BFC4;
+    --line: #6A5560;
+    --burgundy: #8A2E44;
+    --card: rgba(58, 21, 33, 0.78);
+    --satin:
+      linear-gradient(118deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.10) 22%, rgba(255,255,255,0) 34%),
+      linear-gradient(72deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.08) 52%, rgba(255,255,255,0) 60%),
+      linear-gradient(25deg, rgba(255,255,255,0) 58%, rgba(255,255,255,0.08) 70%, rgba(255,255,255,0) 80%),
+      linear-gradient(180deg, #3A1521 0%, #2A0C15 55%, #3A1521 100%);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #F4EEF0;
+  --muted: #C9BFC4;
+  --line: #6A5560;
+  --burgundy: #8A2E44;
+  --card: rgba(58, 21, 33, 0.78);
+  --satin:
+    linear-gradient(118deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.10) 22%, rgba(255,255,255,0) 34%),
+    linear-gradient(72deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.08) 52%, rgba(255,255,255,0) 60%),
+    linear-gradient(25deg, rgba(255,255,255,0) 58%, rgba(255,255,255,0.08) 70%, rgba(255,255,255,0) 80%),
+    linear-gradient(180deg, #3A1521 0%, #2A0C15 55%, #3A1521 100%);
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  background-color: #EFEAE2;
+  background-image: var(--satin);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 56px;
+}
+.wrap { max-width: 560px; margin: 0 auto; display: grid; gap: 44px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+h1, h2 { font-family: var(--display); font-weight: 600; line-height: 1.08; letter-spacing: 0.005em; }
+h1 { font-size: clamp(1.9rem, 7.2vw, 2.45rem); line-height: 1.15; }
+.word { display: inline-block; white-space: nowrap; }
+h2 { font-size: 1.9rem; }
+h3 { font-family: var(--body); font-size: 1rem; font-weight: 600; }
+p { margin: 0; }
+
+/* Letters rise into place; the resting state is fully visible. */
+.rise .word {
+  display: inline-block;
+  animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both;
+  animation-delay: calc(var(--i) * 70ms);
+}
+@keyframes rise { from { transform: translateY(6px); opacity: 0.5; } to { transform: none; opacity: 1; } }
+
+/* Gold metal text for the words that carry the promise. */
+.gold-text {
+  background: linear-gradient(100deg, #9C7A2E 0%, #F3E2A6 38%, #D8B65E 52%, #8A6A22 70%, #E9D28A 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: sheen 6s ease-in-out infinite;
+  font-style: italic;
+}
+@keyframes sheen { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+.kicker {
+  font-family: var(--body); font-size: 0.74rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-deep);
+  display: flex; align-items: center; gap: 12px;
+}
+.kicker::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold-deep), transparent); }
+.lede { color: var(--muted); font-size: 1.02rem; }
+
+/* 3D buttons */
+.cta {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 60px; padding: 14px 22px; border-radius: 16px;
+  background: linear-gradient(180deg, #8A2E44 0%, #6B1B2E 55%, #561525 100%);
+  color: #FBF7EE; border: 1px solid #D8B65E;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 210, 0.35),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.25),
+    0 6px 0 #3E0E1A,
+    0 14px 24px rgba(60, 10, 25, 0.30);
+  font: 600 0.98rem/1.2 var(--body); letter-spacing: 0.04em;
+  text-decoration: none; text-align: center; text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.cta:hover { transform: translateY(-1px); }
+.cta:active {
+  transform: translateY(4px);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.35), 0 2px 0 #3E0E1A, 0 4px 10px rgba(60,10,25,0.25);
+}
+.cta.gold {
+  background: linear-gradient(180deg, #F3E2A6 0%, #D8B65E 50%, #B8903A 100%);
+  color: #3A0E1B; border-color: #F3E2A6; text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -3px 0 rgba(90,50,0,0.25),
+    0 6px 0 #7A5A1E,
+    0 14px 24px rgba(120,80,20,0.30);
+}
+.cta.gold:active { box-shadow: inset 0 2px 6px rgba(60,30,0,0.35), 0 2px 0 #7A5A1E, 0 4px 10px rgba(120,80,20,0.25); }
+.cta:focus-visible, a:focus-visible, .form input:focus, .form select:focus { outline: 3px solid var(--gold); outline-offset: 3px; }
+.cta-note { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 12px; letter-spacing: 0.02em; }
+
+/* Hero */
+.hero { display: grid; gap: 22px; }
+.logo-frame {
+  padding: 8px; border-radius: 20px; background: var(--card);
+  border: 1px solid rgba(216,182,94,0.7);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 18px 34px rgba(60,10,25,0.18), 0 2px 0 rgba(255,255,255,0.4);
+}
+.logo-frame img { width: 100%; height: auto; border-radius: 14px; display: block; }
+.facts { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.fact {
+  padding: 16px 18px; border-radius: 16px; background: var(--card);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 10px 22px rgba(60,10,25,0.12);
+}
+.fact strong { display: block; font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--burgundy); }
+.fact span { color: var(--muted); font-size: 0.88rem; }
+@media (min-width: 520px) { .facts { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* Cards */
+.card {
+  background: var(--card); border-radius: 18px; padding: 22px;
+  border: 1px solid rgba(255,255,255,0.75);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 12px 26px rgba(60,10,25,0.14), 0 2px 0 rgba(90,96,108,0.15);
+}
+.fit { display: grid; gap: 14px; }
+.list { display: grid; gap: 0; margin-top: 10px; }
+.list li { list-style: none; padding: 12px 0; border-bottom: 1px solid rgba(90,96,108,0.22); display: grid; grid-template-columns: 22px 1fr; gap: 12px; }
+.list li:last-child { border-bottom: 0; }
+.list ul { padding: 0; margin: 0; }
+.mark { font-weight: 700; color: var(--gold-deep); }
+
+.steps { display: grid; gap: 14px; }
+.step { display: grid; grid-template-columns: 46px 1fr; gap: 16px; align-items: start; }
+.step b {
+  width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%;
+  background: linear-gradient(180deg, #F3E2A6, #B8903A);
+  color: #3A0E1B; font-family: var(--display); font-size: 1.4rem; font-weight: 700;
+  box-shadow: 0 4px 0 #7A5A1E, 0 10px 16px rgba(60,10,25,0.2), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.step p { color: var(--muted); font-size: 0.93rem; margin-top: 4px; }
+.pace { font-size: 0.88rem; color: var(--muted); border-left: 3px solid var(--gold); padding-left: 14px; }
+
+.faith { font-family: var(--display); font-style: italic; font-size: 1.45rem; line-height: 1.35; }
+.faith cite { display: block; font-family: var(--body); font-style: normal; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-top: 10px; }
+
+.form { display: grid; gap: 14px; }
+.form label { display: grid; gap: 6px; font-weight: 600; font-size: 0.88rem; letter-spacing: 0.02em; }
+.form input, .form select {
+  font: 400 1rem var(--body); color: var(--ink); background: #FFFCF8;
+  border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px; min-width: 0; width: 100%; box-sizing: border-box;
+  box-shadow: inset 0 2px 5px rgba(60,10,25,0.08);
+}
+.check { display: flex !important; gap: 10px; align-items: flex-start; font-weight: 400 !important; font-size: 0.85rem !important; color: var(--muted); }
+.check input { margin-top: 4px; width: 18px; height: 18px; flex: none; accent-color: var(--burgundy); }
+.sent { display: none; padding: 16px; border-radius: 14px; background: var(--card); border: 1px solid var(--gold); }
+.sent.show { display: block; }
+
+.legal { font-size: 0.8rem; color: var(--muted); padding: 20px 22px; border-radius: 16px; background: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.6); }
+.legal p + p { margin-top: 10px; }
+.cal-card { display: grid; gap: 14px; }
+.cal-head { font-family: var(--display); font-size: 1.5rem; font-weight: 600; text-align: center; color: var(--burgundy); }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.cal .wd { text-align: center; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: var(--gold-deep); padding: 4px 0; }
+.cal .day {
+  aspect-ratio: 1 / 1; display: grid; place-items: center; border-radius: 12px;
+  text-decoration: none; font-weight: 600; font-size: 0.95rem; color: var(--ink);
+  background: linear-gradient(180deg, #FFFFFF 0%, #EDE8DF 100%);
+  border: 1px solid rgba(216,182,94,0.55);
+  box-shadow: 0 3px 0 rgba(120,100,80,0.25), 0 6px 12px rgba(60,10,25,0.10), inset 0 1px 0 #fff;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.cal .day:hover { transform: translateY(-1px); }
+.cal .day:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0), inset 0 2px 4px rgba(60,10,25,0.2); }
+.cal .day.today { background: linear-gradient(180deg, #8A2E44, #6B1B2E); color: #FBF7EE; border-color: #D8B65E; }
+.cal .day:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.cal .blank { aspect-ratio: 1 / 1; }
+@media (prefers-reduced-motion: reduce) { .cal .day { transition: none; } }
+/* Calendario sobrio: tarjeta borgoña con detalles dorados y plateados */
+.cal-card {
+  background: linear-gradient(165deg, #6B1B2E 0%, #4A1220 60%, #3A0E1B 100%);
+  border: 1px solid rgba(216,182,94,0.45);
+  color: #F6EFE4;
+  box-shadow: 0 16px 30px rgba(60,10,25,0.28), inset 0 1px 0 rgba(255,255,255,0.12);
+  padding: 26px 22px;
+}
+.cal-card .lede { color: #E8D9DD; font-size: 0.95rem; text-align: center; }
+.cal-head { color: #F3E2A6; font-size: 1.6rem; letter-spacing: 0.02em; }
+.cal { gap: 6px; }
+.cal .wd { color: #D8B65E; font-size: 0.66rem; letter-spacing: 0.16em; }
+.cal .day {
+  aspect-ratio: auto; height: 40px; background: transparent; box-shadow: none;
+  border: 1px solid rgba(216,182,94,0.22); color: #F6EFE4;
+  border-radius: 10px; font-weight: 500; font-size: 0.9rem;
+}
+.cal .day:hover { background: rgba(216,182,94,0.14); transform: none; }
+.cal .day:active { transform: none; box-shadow: none; }
+.cal .day.today { background: #D8B65E; color: #3A0E1B; border-color: #F3E2A6; font-weight: 700; }
+.cal .blank { aspect-ratio: auto; height: 40px; }
+.cal-card .cta.gold { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -3px 0 rgba(90,50,0,0.25), 0 5px 0 #7A5A1E, 0 10px 18px rgba(0,0,0,0.25); }
+.wa-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 54px; border-radius: 14px; padding: 12px 20px;
+  border: 1px solid #8E6B1F; color: #6B1B2E; background: rgba(255,252,248,0.6);
+  text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.03em;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 8px 18px rgba(60,10,25,0.10);
+}
+.wa-btn:hover { background: rgba(255,252,248,0.9); }
+.wa-title { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
+footer { font-family: var(--display); font-style: italic; font-size: 1rem; color: var(--burgundy); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<main class="wrap">
+
+  <section class="hero" aria-labelledby="titulo">
+    <div class="logo-frame">
+      <img src="logo-lgb.jpg" alt="LGB Vision Credit: Educación, estrategia y resultados" width="900" height="507">
+    </div>
+    <p class="kicker">Consulta gratuita · 30 minutos</p>
+    <h1 id="titulo"><span class="rise" aria-label="¿El crédito no te está dejando cumplir tus sueños?"><span class="word" style="--i:0">¿El</span> <span class="word" style="--i:1">crédito</span> <span class="word" style="--i:2">no</span> <span class="word" style="--i:3">te</span> <span class="word" style="--i:4">está</span> <span class="word" style="--i:5">dejando</span> <span class="word" style="--i:6">cumplir</span> <span class="word" style="--i:7">tus</span> <span class="gold-text word" style="--i:8">sueños?</span></span></h1>
+    <p class="lede">Hay un camino claro para entender tu crédito y ponerlo a trabajar a tu favor. En una primera conversación revisamos tu situación, te explicamos qué opciones existen y te decimos con honestidad si podemos ayudarte.</p>
+    <div>
+      <a class="cta" href="https://calendly.com/lisettgb11/consulta-de-credito-gratis" target="_blank" rel="noopener">Agenda tu consulta gratis →</a>
+      <p class="cta-note">Sin costo · Sin tarjeta · Por videollamada o teléfono</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>Gratis</strong><span>La primera consulta no tiene costo</span></div>
+      <div class="fact"><strong>30 minutos</strong><span>Tiempo suficiente para revisar tu caso</span></div>
+      <div class="fact"><strong>En español</strong><span>Te explico cada paso sin tecnicismos</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="para-quien">
+    <p class="kicker">Antes de agendar</p>
+    <h2 id="para-quien" style="margin-top:12px">Esta consulta es para ti si…</h2>
+    <div class="fit" style="margin-top:20px">
+      <div class="card">
+        <h3>Quieres entender tu situación</h3>
+        <ul class="list">
+          <li><span class="mark">✓</span><span>Tienes cuentas con atrasos, deudas o errores que quieres revisar.</span></li>
+          <li><span class="mark">✓</span><span>Tienes una meta concreta: comprar casa, carro, o abrir tu negocio.</span></li>
+          <li><span class="mark">✓</span><span>Puedes dedicar tiempo y un presupuesto mensual al proceso.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Esta consulta no es para ti si…</h3>
+        <ul class="list">
+          <li><span class="mark">–</span><span>Buscas un resultado garantizado en pocas semanas.</span></li>
+          <li><span class="mark">–</span><span>Esperas que alguien lo resuelva sin que tú aportes tu información.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="proceso">
+    <p class="kicker">Cómo trabajamos</p>
+    <h2 id="proceso" style="margin-top:12px">Cuatro pasos, con una persona que te acompaña</h2>
+    <div class="steps" style="margin-top:22px">
+      <div class="card step"><b>1</b><div><h3>Revisión de tu crédito</h3><p>Leemos juntos tus reportes y te explicamos qué está afectando tu puntaje.</p></div></div>
+      <div class="card step"><b>2</b><div><h3>Plan según tu caso</h3><p>Te mostramos qué acciones tienen sentido, en qué orden y por qué.</p></div></div>
+      <div class="card step"><b>3</b><div><h3>Trabajo por rondas</h3><p>Cuando hay información que se puede disputar, la preparamos con su sustento.</p></div></div>
+      <div class="card step"><b>4</b><div><h3>Seguimiento</h3><p>Revisamos avances en cada ronda y te decimos qué sigue.</p></div></div>
+    </div>
+    <p class="pace" style="margin-top:18px">Por ley, las agencias de crédito suelen tener hasta 30 días para investigar una disputa. Los tiempos de cada caso varían y no los prometemos.</p>
+  </section>
+
+  <section aria-labelledby="fe">
+    <div class="card">
+      <p class="faith">“Busquen primero el reino de Dios y su justicia, y todas estas cosas les serán añadidas.”<cite>Mateo 6:33</cite></p>
+      <p class="lede" style="margin-top:16px">Mi fe es la base de cómo trabajo: con paciencia, con honestidad y con un plan claro.</p>
+    </div>
+  </section>
+
+  <section id="agendar" aria-labelledby="agenda-titulo">
+    <p class="kicker">Tu cita</p>
+    <h2 id="agenda-titulo" style="margin-top:12px">Escoge un horario</h2>
+    <p class="lede" style="margin-top:8px">Déjanos tus datos y te confirmamos la cita por WhatsApp o teléfono.</p>
+    <div class="card cal-card" style="margin-top:20px">
+      <p class="lede">Toca un día para ver tus horarios libres. Te llega la confirmación al instante.</p>
+      <div class="cal-head"><span id="cal-mes"></span></div>
+      <div class="cal" id="cal" role="grid" aria-label="Días del mes"></div>
+      <a class="cta gold" href="https://calendly.com/lisettgb11/consulta-de-credito-gratis" target="_blank" rel="noopener" style="margin-top:6px">Ver horarios disponibles →</a>
+      <p class="cta-note" style="margin-top:0">Se abre en una pestaña nueva · 30 minutos · Sin costo</p>
+    </div>
+    <div style="margin-top:18px">
+      <p class="wa-title">¿Prefieres escribir primero?</p>
+      <a class="wa-btn" href="https://wa.me/NUMERO?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20mi%20cr%C3%A9dito" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="legal" aria-label="Aviso legal">
+    <p>La consulta es informativa y educativa. No constituye asesoría legal, contable, financiera ni de inversión, y no garantizamos la eliminación de información, un aumento de puntaje ni la aprobación de tarjetas, préstamos o financiamiento.</p>
+    <p>Tienes derecho a disputar información inexacta de tu reporte por tu propia cuenta y sin costo, y a recibir una copia gratuita de tu reporte cada año.</p>
+  </section>
+
+  <footer>LGB Vision Group LLC · Crea tu futuro con fe</footer>
+</main>
+
+<script>
+(function () {
+  var URL_CITA = "https://calendly.com/lisettgb11/consulta-de-credito-gratis";
+  var hoy = new Date();
+  var y = hoy.getFullYear(), m = hoy.getMonth();
+  var cal = document.getElementById("cal");
+  document.getElementById("cal-mes").textContent =
+    new Date(y, m, 1).toLocaleDateString("es", { month: "long", year: "numeric" });
+  ["D", "L", "M", "M", "J", "V", "S"].forEach(function (d) {
+    var s = document.createElement("span");
+    s.className = "wd"; s.textContent = d; cal.appendChild(s);
+  });
+  var primero = new Date(y, m, 1).getDay();
+  var total = new Date(y, m + 1, 0).getDate();
+  for (var i = 0; i < primero; i++) {
+    var b = document.createElement("span"); b.className = "blank"; cal.appendChild(b);
+  }
+  for (var d = 1; d <= total; d++) {
+    var a = document.createElement("a");
+    a.className = "day" + (d === hoy.getDate() ? " today" : "");
+    a.href = URL_CITA; a.target = "_blank"; a.rel = "noopener";
+    a.textContent = d;
+    a.setAttribute("aria-label", d + " de " + new Date(y, m, d).toLocaleDateString("es", { month: "long" }));
+    cal.appendChild(a);
+  }
+})();
+</script>
+
