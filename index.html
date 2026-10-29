@@ -71,11 +71,16 @@ body {
 }
 .wrap { max-width: 560px; margin: 0 auto; display: grid; gap: 44px; }
 h1, h2, h3 { text-wrap: balance; margin: 0; }
-h1, h2 { font-family: var(--display); font-weight: 600; line-height: 1.08; letter-spacing: 0.005em; color: #5A1426; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
+h1, h2, h3 {
+  font-family: var(--display); font-weight: 700; font-style: italic; line-height: 1.12; letter-spacing: 0.01em;
+  background: linear-gradient(100deg, #7A5A1E 0%, #C9A24A 28%, #F3E2A6 46%, #B8903A 62%, #8A6A22 80%, #D8B65E 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,0.7));
+}
 h1 { font-size: clamp(1.9rem, 7.2vw, 2.45rem); line-height: 1.15; }
 .word { display: inline-block; white-space: nowrap; }
 h2 { font-size: 1.9rem; }
-h3 { font-family: var(--body); font-size: 1rem; font-weight: 600; }
+h3 { font-size: 1.3rem; }
 p { margin: 0; }
 
 /* Letters rise into place; the resting state is fully visible. */
