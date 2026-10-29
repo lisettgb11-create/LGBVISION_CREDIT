@@ -255,6 +255,11 @@ p { margin: 0; }
 .wa-title { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
 footer { font-family: var(--display); font-style: italic; font-size: 1rem; color: var(--burgundy); text-align: center; }
 
+/* Encabezados de sección en dorado */
+h2, h3 {
+  background: linear-gradient(100deg, #8A6A22 0%, #C9A24A 35%, #E9CF86 50%, #9C7A2E 72%, #B8903A 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 /* Pregunta inicial en plata con brillo; cada palabra lleva su propio degradado para que siempre se vea */
 h1 { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #5A1426; filter: none; }
 h1 .word:not(.gold-text) {
