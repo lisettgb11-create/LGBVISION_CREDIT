@@ -91,14 +91,17 @@ p { margin: 0; }
 
 /* Gold metal text for the words that carry the promise. */
 .gold-text {
-  color: #5A1426;
+  background: linear-gradient(100deg, #8A6A22 0%, #C9A24A 35%, #E9CF86 50%, #9C7A2E 72%, #B8903A 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: sheen 6s ease-in-out infinite;
   font-style: italic;
 }
 @keyframes sheen { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
 .kicker {
   font-family: var(--body); font-size: 0.74rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase; color: #8A2E44;
+  letter-spacing: 0.22em; text-transform: uppercase; color: #9C7A2E;
   display: flex; align-items: center; gap: 12px;
 }
 .kicker::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold-deep), transparent); }
@@ -153,7 +156,8 @@ p { margin: 0; }
 }
 .fact strong {
   display: block; font-family: var(--display); font-size: 1.6rem; font-weight: 700; font-style: italic; line-height: 1.1;
-  color: #5A1426;
+  background: linear-gradient(100deg, #8A6A22 0%, #C9A24A 35%, #E9CF86 50%, #9C7A2E 72%, #B8903A 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .fact span { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
 @media (min-width: 520px) { .facts { grid-template-columns: 1fr 1fr 1fr; } }
